@@ -14,8 +14,8 @@ bat "mvn test"
 c: {
 bat "mvn package"
 }
-}
 )
+}
 }
 stage('Consolidate Results'){
 steps {
