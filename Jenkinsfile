@@ -2,9 +2,9 @@ pipeline {
 agent any
 
 stages {
-stage("Paraller Execution'){
-steps{
-paraller(
+stage('Paraller Execution'){
+steps {
+parallel(
 a: {
 bat "mvn clean"
 },
@@ -15,7 +15,7 @@ c: {
 bat "mvn package"
 }
 }
-}
+)
 }
 stage('Consolidate Results'){
 steps {
@@ -25,5 +25,4 @@ archive 'target/*.jar'
 }
 }
 }
-
-
+}
